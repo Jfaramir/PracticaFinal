@@ -6,15 +6,15 @@
 				<xsd:element name="Objeto" minOccurs="0" maxOccurs="unbounded">
 					<xsd:complexType>
 						<xsd:sequence>
+                                                    <xsd:element name="nombre" type="xsd:string" />
 							<xsd:element name="activas" type="xsd:string" />
 							<xsd:element name="pasivas" type="xsd:string" />
                             <xsd:element name="daño" type="xsd:string" />
 							<xsd:element name="vida" type="xsd:string" />
 							<xsd:element name="resistencias" type="xsd:string" />
                             <xsd:element name="cooldownReduction" type="xsd:string" />
-							<xsd:element name="mana" type="xsd:string" />
 						</xsd:sequence>
-						<xsd:attribute name="nombre" type="xsd:string"/>
+						<xsd:attribute name="mana" type="xsd:string"/>
 						<xsd:attribute name="partes" type="xsd:string"/>
 						<xsd:attribute name="precio" type="xsd:string"/>
 					</xsd:complexType>

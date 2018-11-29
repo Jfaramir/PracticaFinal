@@ -43,14 +43,12 @@ public class domXPATH {
             
             if(cosa.equals("/objetos/objeto")){
             for(int i=0; i < nodeList.getLength(); i++){     
-                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue();
-                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue();
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
                 salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
                 salida = salida + nodeList.item(i).getTextContent() + "\n";
-                
                 salida = salida + "\n -----------------------";
-                
-                
+      
             }
             }else{
                 for(int i=0; i < nodeList.getLength(); i++){     

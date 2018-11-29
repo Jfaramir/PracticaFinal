@@ -39,16 +39,17 @@ public class JAXB {
         
         List<Objetos.Objeto> lLibros = misLibros.getObjeto();
         for(int i=0; i<lLibros.size();i++){
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getPrecio();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getNombre();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getPartes();
-            cadena_resultado = cadena_resultado + "Publicado en: " + lLibros.get(i).getActivas();
-            cadena_resultado = cadena_resultado + "\n" + "El titulo es: " + lLibros.get(i).getPasivas();
-            cadena_resultado = cadena_resultado + "\n" + "El autor es: " + lLibros.get(i).getDaño();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getVida();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getResistencias();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getCooldownReduction();
-            cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getMana();
+            
+            cadena_resultado = cadena_resultado + "\n" + "El nombre es: " + lLibros.get(i).getNombre();
+            cadena_resultado = cadena_resultado + "\n" + "Las partes son: " + lLibros.get(i).getPartes();
+            cadena_resultado = cadena_resultado + "\n" + "El precio es: " + lLibros.get(i).getPrecio();
+            cadena_resultado = cadena_resultado + "\n" + "Las activas son: " + lLibros.get(i).getActivas();
+            cadena_resultado = cadena_resultado + "\n" + "Las pasivas son: " + lLibros.get(i).getPasivas();
+            cadena_resultado = cadena_resultado + "\n" + "El daño es: " + lLibros.get(i).getDaño();
+            cadena_resultado = cadena_resultado + "\n" + "La vida es: " + lLibros.get(i).getVida();
+            cadena_resultado = cadena_resultado + "\n" + "Las resistencias son: " + lLibros.get(i).getResistencias();
+            cadena_resultado = cadena_resultado + "\n" + "El CDR es: " + lLibros.get(i).getCooldownReduction();
+            cadena_resultado = cadena_resultado + "\n" + "El mana es: " + lLibros.get(i).getMana();
             cadena_resultado = cadena_resultado + "\n" + "----------------------" + "\n";
         }
         return cadena_resultado;

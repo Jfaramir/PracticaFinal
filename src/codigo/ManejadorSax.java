@@ -69,16 +69,21 @@ public class ManejadorSax extends DefaultHandler{
 
         }
         if(qName.equals("objeto")){
-            cadena_resultado = cadena_resultado + "\nNombre: " + atts.getValue(atts.getQName(0))+"\n";
+            cadena_resultado = cadena_resultado + "\nMana: " + atts.getValue(atts.getQName(0))+"\n";
             ultimoelement = 2;
+        }
+        if(qName.equals("objeto")){
+            cadena_resultado = cadena_resultado + "\nPartes: " + atts.getValue(atts.getQName(1))+"\n";
+            ultimoelement = 3;
         }
         if(qName.equals("objeto")){
             cadena_resultado = cadena_resultado + "\nPrecio: " + atts.getValue(atts.getQName(2))+"\n";
             ultimoelement = 1;
         }
-        if(qName.equals("objeto")){
-            cadena_resultado = cadena_resultado + "\nPartes: " + atts.getValue(atts.getQName(1))+"\n";
-            ultimoelement = 3;
+        else if (qName.equals("nombre")) {
+            ultimoelement = 10;
+            cadena_resultado = cadena_resultado + "\nNombre: " ;
+            
         }
         else if(qName.equals("activas")){
             ultimoelement = 4;
@@ -104,11 +109,7 @@ public class ManejadorSax extends DefaultHandler{
             ultimoelement = 9;
             cadena_resultado = cadena_resultado + "\nCooldown reduction: " ;
         }
-        else if (qName.equals("mana")) {
-            ultimoelement = 10;
-            cadena_resultado = cadena_resultado + "\nMana: " ;
-            
-        }
+        
         
     }
     

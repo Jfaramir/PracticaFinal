@@ -8,8 +8,12 @@ package codigo;
 import generated.Objetos;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
@@ -55,7 +59,23 @@ public class JAXB {
         return cadena_resultado;
         
     }
-    
+     public void generateXML (String nameFile) {
+ 
+        try {
+            File file = new File (nameFile);
+            JAXBContext jc = JAXBContext.newInstance(this.getClass());
+            Marshaller jaxbMarshaller = jc.createMarshaller();
+ 
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+ 
+            jaxbMarshaller.marshal(this, new FileWriter(nameFile, true));
+ 
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
     
 }

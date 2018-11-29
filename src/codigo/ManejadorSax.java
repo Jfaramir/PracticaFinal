@@ -69,15 +69,15 @@ public class ManejadorSax extends DefaultHandler{
 
         }
         if(qName.equals("objeto")){
-            cadena_resultado = cadena_resultado + "\nNombre: " + atts.getValue(atts.getQName(1))+"\n";
+            cadena_resultado = cadena_resultado + "\nNombre: " + atts.getValue(atts.getQName(0))+"\n";
             ultimoelement = 2;
         }
         if(qName.equals("objeto")){
-            cadena_resultado = cadena_resultado + "\nPrecio: " + atts.getValue(atts.getQName(0))+"\n";
+            cadena_resultado = cadena_resultado + "\nPrecio: " + atts.getValue(atts.getQName(2))+"\n";
             ultimoelement = 1;
         }
         if(qName.equals("objeto")){
-            cadena_resultado = cadena_resultado + "\nPartes: " + atts.getValue(atts.getQName(2))+"\n";
+            cadena_resultado = cadena_resultado + "\nPartes: " + atts.getValue(atts.getQName(1))+"\n";
             ultimoelement = 3;
         }
         else if(qName.equals("activas")){

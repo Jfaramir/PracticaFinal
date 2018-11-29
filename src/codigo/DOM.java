@@ -70,11 +70,11 @@ public class DOM {
         
         NodeList nodos = n.getChildNodes();
         
-        for (int i = 0; i < nodos.getLength(); i++) {
+        for (int i = 3; i < nodos.getLength(); i++) {
             ntemp = nodos.item(i);
                 
                 if (ntemp.getNodeType() == Node.ELEMENT_NODE) {
-                    datos[contador] = ntemp.getChildNodes().item(0).getNodeValue();
+                    datos[contador] = ntemp.getTextContent();
                     contador++;
             }
         }
@@ -99,7 +99,7 @@ public class DOM {
     }
         
     
-    public int añadirDOM(String nombre, String partes, String precio, String activas, String pasivas, String daño, String vida, String resistencias, String CDR, String mana){
+    public int añadirDOM(String nombre, String precio, String partes, String activas, String pasivas, String daño, String vida, String resistencias, String CDR, String mana){
         try {
             Node nactivas = doc.createElement("activas");
             Node nactivas_text = doc.createTextNode(activas);
@@ -130,9 +130,10 @@ public class DOM {
             nmana.appendChild(nmana_text);
             
             Node nObjeto = doc.createElement("objeto");
-            ((Element)nObjeto).setAttribute("nombre", nombre);
-            ((Element)nObjeto).setAttribute("partes", partes);
-            ((Element)nObjeto).setAttribute("precio", precio);
+                ((Element)nObjeto).setAttribute("nombre", nombre);
+                ((Element)nObjeto).setAttribute("precio", precio);
+                ((Element)nObjeto).setAttribute("partes", partes);
+            
             nObjeto.appendChild(nactivas);
             nObjeto.appendChild(npasivas);
             nObjeto.appendChild(ndaño);

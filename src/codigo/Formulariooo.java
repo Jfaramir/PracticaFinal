@@ -351,10 +351,11 @@ public class Formulariooo extends javax.swing.JFrame {
 
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
         dialogoSeleccionTipoRecurso();
-        gesSAX.abrir_XML_SAX(fichero);
+        
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        gesSAX.abrir_XML_SAX(fichero);
         Mostrador.setText(gesSAX.recorrerSax());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -366,7 +367,7 @@ public class Formulariooo extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         gesDOM.abrir_XML_DOM(fichero);
         gesDOM.recorrerDOMyMostrar();
-        gesDOM.añadirDOM(Nombre.getText(), Partes.getText(), Precio.getText(),Activas.getText(),Pasivas.getText(),Daño.getText(),Vida.getText(),Resistencias.getText(),CDR.getText(),Mana.getText());
+        gesDOM.añadirDOM(  Nombre.getText(), Precio.getText(), Partes.getText(),Activas.getText(),Pasivas.getText(),Daño.getText(),Vida.getText(),Resistencias.getText(),CDR.getText(),Mana.getText());
         gesDOM.guardarDOMcomoFile(fichero);
         
     }//GEN-LAST:event_jButton3ActionPerformed

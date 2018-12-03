@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='FinalAccesoo' version='1.0'>
-	<schema type='-xmlschema' package='' name='javaobjetos_binding'>
+	<schema type='-xmlschema' package='' name='Objetos'>
 		<xjc-options>
 		</xjc-options>
 		<schema-sources>
-			<schema-source location='xml-resources/jaxb/javaobjetos_binding/ObjetosEsquema.xsd' origLocation='E:\ObjetosEsquema.xsd'/>
+			<schema-source location='xml-resources/jaxb/Objetos/ObjetosEsquema.xsd' origLocation='../../../ObjetosEsquema.xsd'/>
 		</schema-sources>
 		<bindings>
 		</bindings>

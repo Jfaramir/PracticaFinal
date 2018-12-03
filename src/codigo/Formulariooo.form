@@ -463,7 +463,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Mayor3000">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&gt; 3000"/>
+            <Property name="text" type="java.lang.String" value="&gt; 3100"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Mayor3000ActionPerformed"/>
@@ -471,7 +471,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Menor3000">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt; 3000"/>
+            <Property name="text" type="java.lang.String" value="&lt; 3100"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Menor3000ActionPerformed"/>
@@ -525,7 +525,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="MODIFICAR">
           <Properties>
-            <Property name="text" type="java.lang.String" value="MODIFICAR"/>
+            <Property name="text" type="java.lang.String" value="MODIFICAR Y GUARDAR"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MODIFICARActionPerformed"/>

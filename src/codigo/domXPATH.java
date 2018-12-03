@@ -50,6 +50,78 @@ public class domXPATH {
                 salida = salida + "\n -----------------------";
       
             }
+            }else if(cosa.equals("/objetos/objeto[nombre='Crisol de Mikael']")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("/objetos/objeto[nombre='Fuerza de trinidad']")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("/objetos/objeto[nombre='Filo fantasmal de Youmuu']")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("//objeto[@<3100]")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("//objeto[@>3100]")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("/objetos/objeto[@partes=1]" )){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("/objetos/objeto[@partes=2]")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
+            }else if(cosa.equals("/objetos/objeto[@partes=3]")){
+            for(int i=0; i < nodeList.getLength(); i++){     
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(0).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(2).getNodeValue() + "\n";
+                salida = salida + "\n" + nodeList.item(i).getAttributes().item(1).getNodeValue() + "\n";
+                salida = salida + nodeList.item(i).getTextContent() + "\n";
+                salida = salida + "\n -----------------------";
+      
+            }
             }else{
                 for(int i=0; i < nodeList.getLength(); i++){     
                 salida = salida + "\n" + nodeList.item(i).getTextContent() +"\n";

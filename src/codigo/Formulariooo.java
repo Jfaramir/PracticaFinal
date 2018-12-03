@@ -21,7 +21,7 @@ public class Formulariooo extends javax.swing.JFrame {
     ManejadorSax gesSAX = new ManejadorSax();
     JAXB gesJAXB = new JAXB();
     domXPATH getXPATH = new domXPATH();
-    List<Objetos.Objeto> objeto;
+   
     
     String mayor3000 = "//objeto[@precio>3100]";
     String todo = "/objetos/objeto";
@@ -199,14 +199,14 @@ public class Formulariooo extends javax.swing.JFrame {
 
         Mana.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        Mayor3000.setText("> 3000");
+        Mayor3000.setText("> 3100");
         Mayor3000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mayor3000ActionPerformed(evt);
             }
         });
 
-        Menor3000.setText("< 3000");
+        Menor3000.setText("< 3100");
         Menor3000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Menor3000ActionPerformed(evt);
@@ -251,7 +251,7 @@ public class Formulariooo extends javax.swing.JFrame {
             }
         });
 
-        MODIFICAR.setText("MODIFICAR");
+        MODIFICAR.setText("MODIFICAR Y GUARDAR");
         MODIFICAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MODIFICARActionPerformed(evt);
@@ -511,7 +511,7 @@ public class Formulariooo extends javax.swing.JFrame {
     private void AñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirActionPerformed
         gesDOM.abrir_XML_DOM(fichero);
         gesDOM.recorrerDOMyMostrar();
-        gesDOM.añadirDOM(  Nombre.getText(), Precio.getText(), Partes.getText(),Activas.getText(),Pasivas.getText(),Daño.getText(),Vida.getText(),Resistencias.getText(),CDR.getText(),Mana.getText());
+        gesDOM.añadirDOM(Nombre.getText(), Precio.getText(), Partes.getText(),Activas.getText(),Pasivas.getText(),Daño.getText(),Vida.getText(),Resistencias.getText(),CDR.getText(),Mana.getText());
         gesDOM.guardarDOMcomoFile(fichero);
         
     }//GEN-LAST:event_AñadirActionPerformed
@@ -536,6 +536,7 @@ public class Formulariooo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         gesSAX.abrir_XML_SAX(fichero);
+        gesJAXB.abrir_XML_JAXB(fichero);
         Mostrador.setText(gesSAX.recorrerSax());
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -552,32 +553,70 @@ public class Formulariooo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1MouseClicked
 
     private void MODIFICARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MODIFICARActionPerformed
+        for (int i = 0; i < gesJAXB.orbjeto.size(); i++) {
+            if (gesJAXB.orbjeto.get(i).getNombre().equals(jTextField2.getText())){
+                if (gesJAXB.orbjeto.get(i).getMana() != Mana.getText()) {
+                    gesJAXB.orbjeto.get(i).setMana(Mana.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getPrecio()!= Precio.getText()) {
+                    gesJAXB.orbjeto.get(i).setPrecio(Precio.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getPartes()!= Partes.getText()) {
+                    gesJAXB.orbjeto.get(i).setPartes(Partes.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getActivas()!= Activas.getText()) {
+                    gesJAXB.orbjeto.get(i).setActivas(Activas.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getPasivas()!= Pasivas.getText()) {
+                    gesJAXB.orbjeto.get(i).setPasivas(Pasivas.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getDano()!= Daño.getText()) {
+                    gesJAXB.orbjeto.get(i).setDano(Daño.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getVida()!= Vida.getText()) {
+                    gesJAXB.orbjeto.get(i).setVida(Vida.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getResistencias()!= Resistencias.getText()) {
+                    gesJAXB.orbjeto.get(i).setResistencias(Resistencias.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getCooldownReduction()!= CDR.getText()) {
+                    gesJAXB.orbjeto.get(i).setCooldownReduction(CDR.getText());
+                }
+                if (gesJAXB.orbjeto.get(i).getNombre()!= Nombre.getText()) {
+                    gesJAXB.orbjeto.get(i).setNombre(Nombre.getText());
+                }
+            }
+        }
         
-        
-        
-        
-        
-//        gesJAXB.guardarJAXB(fichero, Mostrador.getText());
+        gesJAXB.guardarJAXB(fichero);
     }//GEN-LAST:event_MODIFICARActionPerformed
 
     private void BuscadorXnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscadorXnombreActionPerformed
-        String busqueda = jTextField2.getText();
-        
-        for(int i=0; i< gesJAXB.objeto.size()-1;i++){
-            if(this.objeto.get(i).getNombre().equals(busqueda)){
-                Mana.setText(this.objeto.get(i).getMana());
-                Partes.setText(this.objeto.get(i).getPartes());
-                Precio.setText(this.objeto.get(i).getPrecio());
-                Nombre.setText(this.objeto.get(i).getNombre());
-                Activas.setText(this.objeto.get(i).getActivas());
-                Pasivas.setText(this.objeto.get(i).getPasivas());
-                Daño.setText(this.objeto.get(i).getDaño());
-                Vida.setText(this.objeto.get(i).getVida());
-                Resistencias.setText(this.objeto.get(i).getResistencias());
-                CDR.setText(this.objeto.get(i).getCooldownReduction());
+       gesJAXB.recorrerJAXByMostrar();
+       
+        try {
+            
+            for(int i=0; i< gesJAXB.orbjeto.size();i++){
+            
+            if(gesJAXB.orbjeto.get(i).getNombre().equals(jTextField2.getText())){
+                Mana.setText(gesJAXB.orbjeto.get(i).getMana());
+                Partes.setText(gesJAXB.orbjeto.get(i).getPartes());
+                Precio.setText(gesJAXB.orbjeto.get(i).getPrecio());
+                Nombre.setText(gesJAXB.orbjeto.get(i).getNombre());
+                Activas.setText(gesJAXB.orbjeto.get(i).getActivas());
+                Pasivas.setText(gesJAXB.orbjeto.get(i).getPasivas());
+                Daño.setText(gesJAXB.orbjeto.get(i).getDano());
+                Vida.setText(gesJAXB.orbjeto.get(i).getVida());
+                Resistencias.setText(gesJAXB.orbjeto.get(i).getResistencias());
+                CDR.setText(gesJAXB.orbjeto.get(i).getCooldownReduction());
                 
             }
         }
+        } catch (Exception e) {
+            System.out.println("errror");
+        }
+        
+        
     }//GEN-LAST:event_BuscadorXnombreActionPerformed
 
     private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked

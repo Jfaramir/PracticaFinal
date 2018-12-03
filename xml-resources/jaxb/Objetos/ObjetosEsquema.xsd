@@ -1,0 +1,24 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="objetos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="objeto" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:string" name="activas"/>
+              <xs:element type="xs:string" name="pasivas"/>
+              <xs:element type="xs:string" name="dano"/>
+              <xs:element type="xs:string" name="vida"/>
+              <xs:element type="xs:string" name="resistencias"/>
+              <xs:element type="xs:string" name="cooldownReduction"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="mana" use="optional"/>
+            <xs:attribute type="xs:string" name="partes" use="optional"/>
+            <xs:attribute type="xs:string" name="precio" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

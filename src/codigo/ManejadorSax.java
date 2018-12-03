@@ -93,7 +93,7 @@ public class ManejadorSax extends DefaultHandler{
             ultimoelement = 5;
             cadena_resultado = cadena_resultado + "\nPasivas: " ;
         }
-        else if (qName.equals("daño")) {
+        else if (qName.equals("dano")) {
             ultimoelement = 6;
             cadena_resultado = cadena_resultado + "\nDaño: " ;
         }

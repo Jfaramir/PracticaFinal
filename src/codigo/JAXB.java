@@ -28,6 +28,8 @@ public class JAXB {
     
     Objetos misObjetos;
     
+    List<Objetos.Objeto> objeto;
+    
     
     public int  abrir_XML_JAXB(File fichero){
         JAXBContext contexto;
@@ -64,13 +66,16 @@ public class JAXB {
         return cadena_resultado;
         
     }
+   
+    
+    
      public int guardarJAXB (File fichero,String archivo) {
  
          try {
              
              System.out.println("1");
          // Instanciamos el contexto, indicando la clase que será el RootElement.
-JAXBContext jaxbContext = JAXBContext.newInstance(Objetos.class);
+JAXBContext jaxbContext = JAXBContext.newInstance(archivo);
              System.out.println("2");
 // Creamos un Marshaller, que es la clase capaz de convertir nuestro java bean
 // en una cadena XML
@@ -83,7 +88,7 @@ jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 // Hacemos la conversión llamando al método marshal, pasando una instancia del java
 // bean que quermos convertir a XML y un OutpuStream donde queramos que salga el XML,
 // en esta caso, la salida estándar. Podría ser un fichero o cualquier otro Stream.
-jaxbMarshaller.marshal(archivo, new FileWriter("fichero.xml"));
+jaxbMarshaller.marshal(Objetos.class, new FileWriter("fichero.xml"));
 System.out.println("5");
 
 

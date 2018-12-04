@@ -17,10 +17,12 @@ import javax.swing.JFileChooser;
 public class Formulariooo extends javax.swing.JFrame {
 
     File fichero = null;
+    File fichero2 = null;
     DOM gesDOM = new DOM();
     ManejadorSax gesSAX = new ManejadorSax();
     JAXB gesJAXB = new JAXB();
     domXPATH getXPATH = new domXPATH();
+    
    
     
     String mayor3000 = "//objeto[@precio>3100]";
@@ -32,6 +34,7 @@ public class Formulariooo extends javax.swing.JFrame {
     String partes = "/objetos/objeto[@partes=";
     String partes2 = "]";
     
+    String rutaArchivo = "";
     
     /**
      * Creates new form Formulariooo
@@ -53,6 +56,7 @@ public class Formulariooo extends javax.swing.JFrame {
         }
         return fichero;
     }
+    
     
     
     /**
@@ -106,6 +110,7 @@ public class Formulariooo extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -459,6 +464,14 @@ public class Formulariooo extends javax.swing.JFrame {
         });
         jMenu1.add(jCheckBoxMenuItem1);
 
+        jMenuItem1.setText("Guardar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -613,7 +626,7 @@ public class Formulariooo extends javax.swing.JFrame {
             }
         }
         } catch (Exception e) {
-            System.out.println("errror");
+            System.out.println("error");
         }
         
         
@@ -626,6 +639,29 @@ public class Formulariooo extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
+        int i;
+        
+        JFileChooser JFC = new JFileChooser();
+        JFC.setDialogType(JFileChooser.SAVE_DIALOG);
+        i = JFC.showSaveDialog(this);
+        
+        try {
+            if(i == JFileChooser.APPROVE_OPTION){
+                fichero2 = JFC.getSelectedFile();
+                
+                
+                gesJAXB.recorrerJAXByMostrar();
+                gesJAXB.guardarJAXB(fichero2);
+                
+            }
+            
+        } catch (Exception e) {
+            System.out.println("errorrr");
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -696,6 +732,7 @@ public class Formulariooo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;

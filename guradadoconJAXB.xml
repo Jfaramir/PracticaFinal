@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objetos>
+    <objeto mana="250m" partes="3p" precio="3733 gold">
+        <nombre>Fuerza de trinidad</nombre>
+        <activas>sin activas</activas>
+        <pasivas>Rabia: Los ataques basicos otorgan 20 de velocidad de
+ movimiento durante 2 s,Hoja encantada: Tras usar una habilidad,
+ el siguiente ataque basico inflige daño fisico adicional igual al 
+ 200% del daño de ataque basico </pasivas>
+        <dano>25 daño fisico</dano>
+        <vida>250 health</vida>
+        <resistencias>0 armadura, 0 resistencia magica</resistencias>
+        <cooldownReduction>20%</cooldownReduction>
+    </objeto>
+    <objeto mana="0" partes="2" precio="2500">
+        <nombre>Crisol de Mikael</nombre>
+        <activas>Limpia todos los aturdimientos,inmovilizaciones ...</activas>
+        <pasivas>+15% de potencia en curaciones y escudos.</pasivas>
+        <dano>0</dano>
+        <vida>0</vida>
+        <resistencias>0 armadura, 40 resistencia magica</resistencias>
+        <cooldownReduction>10%</cooldownReduction>
+    </objeto>
+    <objeto mana="0" partes="2" precio="2900">
+        <nombre>Filo fantasmal de Youmuu</nombre>
+        <activas> +20% de velocidad de movimiento durante 6 s.</activas>
+        <pasivas>+18 de letalidad, +40 de velocidad de movimiento fuera   de combate.</pasivas>
+        <dano>55 daño fisico</dano>
+        <vida>0</vida>
+        <resistencias>0 armadura, 0 resistencia magica</resistencias>
+        <cooldownReduction>20%</cooldownReduction>
+    </objeto>
+</objetos>

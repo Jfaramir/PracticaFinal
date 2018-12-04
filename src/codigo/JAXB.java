@@ -5,9 +5,11 @@
  */
 package codigo;
 
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import generated.Objetos;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
@@ -87,6 +89,5 @@ public class JAXB {
         }
          
     }
-    
     
 }
